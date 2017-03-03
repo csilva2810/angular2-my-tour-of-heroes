@@ -54,8 +54,6 @@ import { HeroService } from './hero.service';
 	}
 	`],
 	template: `
-	<h1>{{title}}</h1>
-	
 	<div class="row">
 		<div class="col-md-3">
 			<h2>My Heroes</h2>
