@@ -15,7 +15,7 @@ Para fazer o bind de um evento do componente precisamos usar a sintaxe `(click)=
 **Class Binding** - É possível aplicar classes em qualquer elemento para podermos aplicar determinado estilo de acordo com alguma condição. `[class.selecionado]="1 > 0"`. Nesse caso vamos aplicar a classe **selecionado** se a expressão **1 > 0** retornar **true**
 
 ## Capítulo 3
-Aqui começamos a separar melhor as responsabilidades de cada parte do layout. Exportamos os detalhes do Herói para um novo componente **hero-detail.component.ts**. Esse componente tem uma propriedade de Input, ou seja, ela é passada para ele pelo componente pai.
+Aqui começamos a separar melhor as responsabilidades de cada parte do App. Exportamos os detalhes do Herói para um novo componente **hero-detail.component.ts**. Esse componente tem uma propriedade de Input, ou seja, ela é passada para ele pelo componente pai.
 <br>
 Para aceitar propriedades de componentes pais, precisamos declarálas dentro do componente com a anotação **@Input()**, por exemplo: `@Input() hero: Hero`. É importante não esquecer de importar o módulo **Input** do **@angular/core**.
 
@@ -35,3 +35,5 @@ Então a melhor maneira de usar um serviço em um componente é injetando esse s
 ### Ciclo de Vida do Componente
 Todo componente possui um ciclo de vida no Angular. Nós podemos implementar alguns métodos de ciclo de vida de nossos componentes para executarmos alguma lógica. Por exemplo: Em nosso **app.component** estamos implementando o método OnInit do ciclo de vida para consumir nosso **HeroService** e armazenar os nosso Heroes no array **heroes**. Para saber mais consulte a documentação sobre os [eventos de ciclo de vida](https://angular.io/docs/ts/latest/guide/lifecycle-hooks.html).
 
+## Capítulo 5
+Rotas são o que definem a navegação pelo App. O angular tem um módulo de rotas que pode ser configurado a partir de algumas do objeto **RouterModule** do pacote **@angular/router**. Para começar a configurar as rotas do nosso App, precisamos colocar a tag `<base href="/">` dentro do head da nossa página. A partir daí, podemos importar o RouterModule dentro do array de imports do nosso **app.module** chamando o método **forRoot** e passando um array de objetos que representam o caminho da rota e o componente que está vinculado à esse caminho.
