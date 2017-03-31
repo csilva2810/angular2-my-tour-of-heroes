@@ -33,6 +33,9 @@ System.register(['@angular/core', './mock-heroes'], function(exports_1, context_
                         setTimeout(function () { return resolve(_this.getHeroes()); }, 2000);
                     });
                 };
+                HeroService.prototype.getTopHeroes = function () {
+                    return Promise.resolve(mock_heroes_1.HEROES.slice(0, 5));
+                };
                 HeroService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [])

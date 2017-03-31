@@ -16,4 +16,8 @@ export class HeroService {
     });
   }
 
+  getTopHeroes(): Promise<Hero[]> {
+    return Promise.resolve(HEROES.slice(0, 5));
+  }
+
 }

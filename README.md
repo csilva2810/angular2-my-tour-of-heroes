@@ -37,3 +37,10 @@ Todo componente possui um ciclo de vida no Angular. Nós podemos implementar alg
 
 ## Capítulo 5
 Rotas são o que definem a navegação pelo App. O angular tem um módulo de rotas que pode ser configurado a partir de algumas do objeto **RouterModule** do pacote **@angular/router**. Para começar a configurar as rotas do nosso App, precisamos colocar a tag `<base href="/">` dentro do head da nossa página. A partir daí, podemos importar o RouterModule dentro do array de imports do nosso **app.module** chamando o método **forRoot** e passando um array de objetos que representam o caminho da rota e o componente que está vinculado à esse caminho.
+Após configurarmos as rotas do nosso app, podemos começar a declará-las no nosso HTML usando as diretivas **routerLink** e **router-outlet**. A **routerLink** é aplicada em elementos clicáveis apontando a rota que queremos navegar. Já a **router-outlet** serve para que o Angular renderize o componente vinculado à rota.
+<br>
+Como nosso **app.component** está configurado com com as diretivas **routerLink** e **router-outlet** chamamos esse componente de *Router Component* pois ele serve para prover navegação em nosso App.
+### Redirect Routes
+Também é possível definir rotas que serão redirecionadas para outros componentes, para isso precisamos criar um objeto de rota com a propriedade **redirectTo** e **patchMatch** por exemplo: `{ path: '', redirectTo: '/dashboard', pathMatch: 'full' }`.
+<br>
+Aqui estamos dizendo para nosso Router que quando o caminho da rota estiver vazio ('') ele deve redirecionar para a rota */dashboard*. A propriedade **patchMatch** como *full* diz ao router que ele só deve fazer o redirect quando o caminho da rota for completamente igual ao caminho especificado. [Leia mais](https://angular.io/docs/ts/latest/guide/router.html#!#redirect)
