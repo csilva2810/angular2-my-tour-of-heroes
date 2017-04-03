@@ -17,7 +17,11 @@ export class HeroService {
   }
 
   getTopHeroes(): Promise<Hero[]> {
-    return Promise.resolve(HEROES.slice(0, 5));
+    return Promise.resolve(HEROES.slice(0, 4));
+  }
+
+  getHero(id: number): Promise<Hero> {
+    return Promise.resolve(HEROES.find(hero => hero.id == id));
   }
 
 }

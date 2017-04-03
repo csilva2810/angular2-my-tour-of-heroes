@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/router', './app.component', './hero/hero.service', './hero/heroes.component', './hero/hero-detail.component', './dashboard/dashboard.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './app-routing.module', './app.component', './hero/hero.service', './hero/heroes.component', './hero/hero-detail.component', './dashboard/dashboard.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,8 +10,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, router_1, app_component_1, hero_service_1, heroes_component_1, hero_detail_component_1, dashboard_component_1;
-    var ROUTES, AppModule;
+    var core_1, platform_browser_1, forms_1, app_routing_module_1, app_component_1, hero_service_1, heroes_component_1, hero_detail_component_1, dashboard_component_1;
+    var AppModule;
     return {
         setters:[
             function (core_1_1) {
@@ -23,8 +23,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (forms_1_1) {
                 forms_1 = forms_1_1;
             },
-            function (router_1_1) {
-                router_1 = router_1_1;
+            function (app_routing_module_1_1) {
+                app_routing_module_1 = app_routing_module_1_1;
             },
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
@@ -42,12 +42,6 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                 dashboard_component_1 = dashboard_component_1_1;
             }],
         execute: function() {
-            // configuring app routes
-            ROUTES = [
-                { path: 'heroes', component: heroes_component_1.HeroesComponent },
-                { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
-                { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-            ];
             AppModule = (function () {
                 function AppModule() {
                 }
@@ -56,7 +50,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         imports: [
                             platform_browser_1.BrowserModule,
                             forms_1.FormsModule,
-                            router_1.RouterModule.forRoot(ROUTES)
+                            app_routing_module_1.AppRoutingModule
                         ],
                         declarations: [
                             app_component_1.AppComponent,

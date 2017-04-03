@@ -26,7 +26,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     core_1.Component({
                         moduleId: module.id,
                         selector: 'my-app',
-                        templateUrl: 'app.component.html'
+                        templateUrl: 'app.component.html',
+                        styleUrls: ['./app.component.css']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
